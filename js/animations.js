@@ -10,8 +10,14 @@ $(document).ready(function() {
     if(charLeft <= 10) {
       $('#char-count').css('color', 'red');
     }
-    else {
+    if(charLeft > 10) {
       $('#char-count').css('color', 'black');
     }
-  })
+    if(charLeft < 0) {
+      $('#tweet-submit').prop('disabled', true);
+    }
+    if(charLeft >= 0) {
+      $('#tweet-submit').prop('disabled', false);
+    }
+  });
 });
